@@ -1,8 +1,9 @@
 package DZ.seminar_2;
 
+// Класс Car представляет автомобиль
 public class Car extends Vehicle{
-    private final int FuelCapacity;
-    private int currentFuelCapacity;
+    private final int FuelCapacity; // емкость топливного бака
+    private int currentFuelCapacity; // текущий уровень топлива в баке
     public Car(
             int id, String brand,
             String model, int yearOfRelease,
@@ -35,7 +36,7 @@ public class Car extends Vehicle{
     }
 
     @Override
-    public void displayInfo() {
+    public void displayInfo() { // Информация об автомобиле
         System.out.printf(
                 "Автомобиль:\nID: %d\nМарка: %s\nМодель: %s\n"
                 +"Год выпуска: %d\nОбъем бензобака: %d л\n",
@@ -44,12 +45,9 @@ public class Car extends Vehicle{
 
     public int getCurrentFuelCapacity(){
         return this.currentFuelCapacity;
-    }
-    public void setCurrentFuelCapacity(int liters) {
-        this.currentFuelCapacity = this.currentFuelCapacity + liters;
-    }
+    } // Изменение уровня топлива в баке
 
-    public void refuel(int liters) {
+    public void refuel(int liters) { // Метод заправки
         int newVolume = this.currentFuelCapacity + liters;
         if (newVolume <= this.FuelCapacity){
             this.currentFuelCapacity = newVolume;

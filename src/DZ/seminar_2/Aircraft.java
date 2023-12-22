@@ -1,9 +1,12 @@
 package DZ.seminar_2;
 
-public class Aircraft extends Vehicle implements Flyable{
-    private final int MaxAltitude;
-    private int speed;
-    private boolean flightStatus;
+import DZ.seminar_2.Interface.Flyable;
+
+// Класс Aircraft представляет самолет
+public class Aircraft extends Vehicle implements Flyable {
+    private final int MaxAltitude; // Максмальная высота полета
+    private int speed; // скорость
+    private boolean flightStatus; // статус полета
     public Aircraft(int id, String brand, String model, int yearOfRelease, int maxAltitude) {
         super(id, brand, model, yearOfRelease);
         this.MaxAltitude = maxAltitude;
@@ -34,42 +37,33 @@ public class Aircraft extends Vehicle implements Flyable{
     }
 
     @Override
-    public void displayInfo() {
+    public void displayInfo() { // Информация об самолете
         System.out.printf(
                 "Самолет\nID: %d\nБрэнд: %s\nМарка: %s\n"
-                +"Год выпуска: %d\nМаксимальная высота полета: %d\n",
+                +"Год выпуска: %d\nМаксимальная высота полета: %d м\n",
                 this.id, this.brand, this.model, this.yearOfRelease, this.MaxAltitude
         );
     }
 
     public boolean isFlying() {
         return this.flightStatus;
-    }
-
-    private void changedFlightStatus() {
-        this.flightStatus = !this.flightStatus;
-    }
+    } // Проверка летит самолет или нет
 
     @Override
-    public void takeoff() {
+    public void takeoff() { // Метод взлета
         if (this.speed >= 250) {
-            changedFlightStatus();
-            System.out.println("Самолет взлетает...\n");
+            this.flightStatus = true;
+            System.out.println("Самолет взлетает...");
         }
         else {
-            System.out.println("Скорости недостаточно для взлета\nНеобходимо набрать скорость 250 км/ч или выше\n");
+            System.out.println("Скорости недостаточно для взлета\nНеобходимо набрать скорость 250 км/ч или выше");
         }
     }
 
     @Override
-    public void land() {
-        if (this.speed < 250) {
-            changedFlightStatus();
-            System.out.println("Самолет снижается и совершает посадку\n");
-        }
-        else {
-            System.out.println("Скорость слишком высокая для посадки\nПонизьте скорость до значений ниже 250 км/ч\n");
-        }
+    public void land() { // Метод приземления
+            this.flightStatus = false;
+            System.out.println("Самолет снижается и совершает посадку");
     }
 }
 

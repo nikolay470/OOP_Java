@@ -1,10 +1,9 @@
 package DZ.seminar_3;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
+import DZ.seminar_3.Comparators.ReverseSortOfDate;
 
 public class Program {
     public static void main(String[] args) {
@@ -49,6 +48,9 @@ public class Program {
 
         System.out.println(flow1.toString());
         Collections.sort(flow1.getListGroup());
+        System.out.println(flow1 + "\n");
+        System.out.println("------------------");
+        Collections.sort(flow1.getListGroup(), new ReverseSortOfDate());
         System.out.println(flow1 + "\n");
 
         for (Flow listFlow : listFlows) {

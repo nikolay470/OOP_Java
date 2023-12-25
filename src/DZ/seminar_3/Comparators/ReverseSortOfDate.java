@@ -4,9 +4,19 @@ import DZ.seminar_3.StudyGroup;
 
 import java.util.Comparator;
 
-class ReverseSortOfDate implements Comparator<StudyGroup> {
+public class ReverseSortOfDate implements Comparator<StudyGroup> {
     @Override
     public int compare(StudyGroup first, StudyGroup second) {
-        return second.getDataOfFormation().getYear() - first.getDataOfFormation().getYear();
+        int resultYear = second.getDataOfFormation().getYear() - first.getDataOfFormation().getYear();
+        if (resultYear == 0) {
+            int resultMonth = second.getDataOfFormation().getMonthValue() - first.getDataOfFormation().getMonthValue();
+            if (resultMonth == 0) {
+                int resultDay = second.getDataOfFormation().getDayOfMonth() -
+                        first.getDataOfFormation().getDayOfMonth();
+                return resultDay;
+            }
+            return resultMonth;
+        }
+        return resultYear;
     }
 }

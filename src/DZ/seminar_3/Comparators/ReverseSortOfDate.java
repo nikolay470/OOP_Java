@@ -5,6 +5,7 @@ import DZ.seminar_3.StudyGroup;
 import java.util.Comparator;
 
 public class ReverseSortOfDate implements Comparator<StudyGroup> {
+    // класс содержащий метод для сортировки групп по дате формирования (по убыванию)
     @Override
     public int compare(StudyGroup first, StudyGroup second) {
         int resultYear = second.getDataOfFormation().getYear() - first.getDataOfFormation().getYear();

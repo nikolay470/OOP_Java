@@ -3,6 +3,12 @@ package DZ.seminar_3;
 import java.util.*;
 
 public class Flow implements Iterable<StudyGroup>{
+    /**
+     * класс представляет поток состощий из студенческих групп
+     * поля:
+     * final int MaxSizeFlow - максимальое колличество групп в потоке
+     * ArrayList<StudyGroup> listGroup - список групп в потоке
+     */
     private final int MaxSizeFlow = 20;
     private ArrayList<StudyGroup> listGroup = new ArrayList<>(MaxSizeFlow);
     public Flow(List<StudyGroup> list) {
@@ -12,21 +18,24 @@ public class Flow implements Iterable<StudyGroup>{
 
     }
     public boolean addGroup(StudyGroup group) {
+        // метод добавляет группу в поток, если поток уже заполнен то вернется false
         if (this.listGroup.size() <= this.MaxSizeFlow) {
             this.listGroup.add(group);
             return true;
         }
         return false;
     }
-    public Integer getQuantGroup() {
+    public Integer getQuantGroups() {
         return this.listGroup.size();
     }
-    public ArrayList<StudyGroup> getListGroup() {
+    public ArrayList<StudyGroup> getListGroups() {
         return this.listGroup;
     }
 
     @Override
     public Iterator<StudyGroup> iterator() {
+        //метод возвращает экземпляр анонимного класса реализующего интерфейс Iterator
+
         return new Iterator<StudyGroup>() {
             private int currentIndex = 0;
             private ArrayList<StudyGroup> list = listGroup;
@@ -61,6 +70,7 @@ public class Flow implements Iterable<StudyGroup>{
     }
     @Override
     public boolean equals(Object obj) {
+        // метод сравнивает два экземпляра класса Flow
         if (obj instanceof Flow) {
             Flow newObj = (Flow) obj;
             return this.listGroup.equals(newObj.listGroup);

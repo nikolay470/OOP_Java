@@ -5,11 +5,14 @@ import DZ.seminar_3.Comparators.FlowComparator;
 import java.util.List;
 import java.util.Collections;
 
-public class FlowService<T> {
-    public void sortFlows(T coll) {
-        if (coll instanceof List) {
-            List newColl = (List) coll;
-            Collections.sort(newColl, new FlowComparator());
-        }
+public class FlowService {
+    //класс содержащий метод сортировки списка потоков
+
+    /**
+     * метод void sortFlows - метод для сортировки списка потоков с испольованием компоратора
+     * @param coll - коллекция потоков типа List<Flow>
+     */
+    public void sortFlows(List<Flow> coll) {
+            Collections.sort(coll, new FlowComparator());
     }
 }

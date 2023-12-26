@@ -6,6 +6,14 @@ import java.time.format.DateTimeParseException;
 import java.util.Comparator;
 
 public class StudyGroup implements Comparable<StudyGroup>{
+    /**
+     * класс представляет студенческую группу
+     * поля:
+     * String name - название группы
+     * Integer quantStudents - колличество студентов
+     * LocalDate dataOfFormation - дата формирования группы
+     * DateTimeFormatter formatter - формат даты в котором нужно передавать дату формирования группы
+     */
     private String name;
     private Integer quantStudents;
     private LocalDate dataOfFormation;
@@ -40,6 +48,9 @@ public class StudyGroup implements Comparable<StudyGroup>{
     }
     @Override
     public int compareTo(StudyGroup group) {
+        /**
+         * метод реализует способ сравнения экземпляров этого класса по умолчанию для сортировки
+         */
            int resultYear = this.dataOfFormation.getYear() - group.getDataOfFormation().getYear();
            if (resultYear == 0) {
                int resultMonth = this.dataOfFormation.getMonthValue() - group.getDataOfFormation().getMonthValue();
@@ -53,6 +64,9 @@ public class StudyGroup implements Comparable<StudyGroup>{
            return resultYear;
     }
     public String getInfo() {
+        /**
+         *  инфориация об студенческой группе
+         */
         return String.format(
                 "Группа %s\nДата формирования %d-%d-%d\nКолличество студентво %d\n",
                 this.name, this.dataOfFormation.getDayOfMonth(), this.dataOfFormation.getMonth(),
@@ -66,6 +80,9 @@ public class StudyGroup implements Comparable<StudyGroup>{
 
     @Override
     public boolean equals(Object obj) {
+        /**
+         * метод реализует сравнение двух студенческих групп
+         */
         if (obj instanceof StudyGroup) {
             StudyGroup newObj = (StudyGroup) obj;
             return (this.name.equals(newObj.getName())

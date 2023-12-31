@@ -51,17 +51,17 @@ public class StudyGroup implements Comparable<StudyGroup>{
         /**
          * метод реализует способ сравнения экземпляров этого класса по умолчанию для сортировки
          */
-           int resultYear = this.dataOfFormation.getYear() - group.getDataOfFormation().getYear();
-           if (resultYear == 0) {
-               int resultMonth = this.dataOfFormation.getMonthValue() - group.getDataOfFormation().getMonthValue();
-               if (resultMonth == 0) {
-                   int resultDay = this.dataOfFormation.getDayOfMonth() -
+        int resultYear = this.dataOfFormation.getYear() - group.getDataOfFormation().getYear();
+        if (resultYear == 0) {
+            int resultMonth = this.dataOfFormation.getMonthValue() - group.getDataOfFormation().getMonthValue();
+            if (resultMonth == 0) {
+                int resultDay = this.dataOfFormation.getDayOfMonth() -
                                     group.getDataOfFormation().getDayOfMonth();
-                   return resultDay;
-               }
-               return resultMonth;
-           }
-           return resultYear;
+                return resultDay;
+            }
+            return resultMonth;
+        }
+        return resultYear;
     }
     public String getInfo() {
         /**

@@ -39,10 +39,15 @@ public class Program {
         listTeachers.add(teacher5);
         listTeachers.add(teacher6);
 
+        System.out.println("Информация об учителе --->");
+        System.out.println(teacher3.getInfo());
+
+        System.out.println("Список учителей --->");
         System.out.println("------------");
         controller.printList(listTeachers);
         System.out.println("------------");
 
+        System.out.println("Изменение данных об учителе --->");
         Scanner input = new Scanner(System.in);
         int name = 1;
         int surname = 0;

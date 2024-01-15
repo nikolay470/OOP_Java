@@ -1,5 +1,6 @@
 package DZ.seminar_5.view;
 
+import DZ.seminar_5.model.StudyGroup;
 import DZ.seminar_5.model.abstractClass.User;
 
 import java.util.ArrayList;
@@ -17,7 +18,9 @@ public class View {
                 + "4. Получить информацию об учителе\n"
                 + "5. Показать список студентов\n"
                 + "6. Показать список учителей\n"
-                + "7. Выйти\n"
+                + "7. Создать учебную группу\n"
+                + "8. Показать список групп\n"
+                + "9. Выйти\n"
         );
         int choice = input.nextInt();
         input.nextLine();

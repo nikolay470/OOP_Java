@@ -1,6 +1,7 @@
 package DZ.seminar_5.controller;
 
 import DZ.seminar_5.model.Student;
+import DZ.seminar_5.model.StudyGroup;
 import DZ.seminar_5.model.Teacher;
 import DZ.seminar_5.service.DataService;
 import DZ.seminar_5.view.View;
@@ -59,6 +60,14 @@ public class Controller {
                 } else if (command == 6) {
                     view.printList(service.getListTeacher());
                 } else if (command == 7) {
+                    service.createStudyGroup(
+                            service.getListTeacher().get(2),
+                            service.getListStudent(),
+                            "java", 23
+                    );
+                } else if (command == 8) {
+                    System.out.println(service.getListGroups());
+                } else if (command == 9) {
                     flagIteration = false;
                 }
             } else {

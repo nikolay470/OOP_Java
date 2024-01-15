@@ -14,6 +14,7 @@ public class StudyGroup extends Group {
     {
         super(teacher, students, faculty, numberGroup);
     }
+
     @Override
     public String getInfo() {
         return String.format(
@@ -65,7 +66,7 @@ public class StudyGroup extends Group {
     @Override
     public String toString() {
         return String.format(
-                "%s - %d",
+                "%s - %d\n",
                 this.getFaculty(), this.getNumberGroup()
         );
     }

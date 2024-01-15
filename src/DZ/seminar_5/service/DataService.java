@@ -91,6 +91,10 @@ public class DataService {
         return result;
     }
 
+    public ArrayList<StudyGroup> getListGroups() {
+        return this.listGroups;
+    }
+
     public void createStudyGroup(
             Teacher teacher,
             ArrayList<Student> students,

@@ -1,4 +1,4 @@
-package seminar_5.model;
+package DZ.seminar_5.model.abstractClass;
 
 public abstract class User {
     private String name;

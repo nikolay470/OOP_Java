@@ -1,20 +1,22 @@
-package seminar_5.model;
+package DZ.seminar_5.model;
+
+import DZ.seminar_5.model.abstractClass.User;
 
 public class Student extends User {
-    private String group;
+    private StudyGroup group;
     private String faculty;
 
-    public Student(String name, String surname, int age, String group, String faculty) {
+    public Student(String name, String surname, int age, String faculty) {
         super(name, surname, age);
-        this.group = group;
         this.faculty = faculty;
+        this.group = null;
     }
 
-    public String getGroup() {
+    public StudyGroup getGroup() {
         return group;
     }
 
-    public void setGroup(String group) {
+    public void setGroup(StudyGroup group) {
         this.group = group;
     }
 

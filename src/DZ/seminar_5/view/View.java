@@ -1,6 +1,6 @@
-package seminar_5.view;
+package DZ.seminar_5.view;
 
-import seminar_5.model.User;
+import DZ.seminar_5.model.abstractClass.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;

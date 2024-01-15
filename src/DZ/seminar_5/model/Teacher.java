@@ -1,6 +1,6 @@
-package seminar_5.model;
+package DZ.seminar_5.model;
 
-import java.time.Year;
+import DZ.seminar_5.model.abstractClass.User;
 
 public class Teacher extends User {
     private final String objectTeaching;
@@ -14,7 +14,6 @@ public class Teacher extends User {
         this.objectTeaching = objectTeaching;
         this.experience = experience;
     }
-
 
     public String getObjectTeaching() {
         return objectTeaching;

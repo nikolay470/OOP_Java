@@ -1,9 +1,9 @@
-package seminar_5.controller;
+package DZ.seminar_5.controller;
 
-import seminar_5.model.Student;
-import seminar_5.model.Teacher;
-import seminar_5.service.DataService;
-import seminar_5.view.View;
+import DZ.seminar_5.model.Student;
+import DZ.seminar_5.model.Teacher;
+import DZ.seminar_5.service.DataService;
+import DZ.seminar_5.view.View;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +23,7 @@ public class Controller {
                     data = view.getDataOfStudent();
                     service.createStudent(
                             data.get("name"), data.get("surname"),
-                            Integer.parseInt(data.get("age")), data.get("group"),
+                            Integer.parseInt(data.get("age")),
                             data.get("faculty")
                     );
                     data = null;

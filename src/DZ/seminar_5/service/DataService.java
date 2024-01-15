@@ -1,13 +1,15 @@
-package seminar_5.service;
+package DZ.seminar_5.service;
 
-import seminar_5.model.Student;
-import seminar_5.model.Teacher;
+import DZ.seminar_5.model.Student;
+import DZ.seminar_5.model.StudyGroup;
+import DZ.seminar_5.model.Teacher;
 
 import java.util.ArrayList;
 
 public class DataService {
     private ArrayList<Student> listStudent = new ArrayList<>();
     private ArrayList<Teacher> listTeacher = new ArrayList<>();
+    private ArrayList<StudyGroup> listGroups = new ArrayList<>();
 
     public ArrayList<Student> getListStudent() {
         return this.listStudent;
@@ -27,12 +29,11 @@ public class DataService {
 
     public boolean createStudent(
             String name, String surname, int age,
-            String group, String faculty
-    )
-    {
+            String faculty
+    ) {
         try {
             listStudent.add(new Student(
-                    name, surname, age, group, faculty
+                    name, surname, age, faculty
             ));
             return true;
         } catch (Exception exception) {
@@ -43,11 +44,10 @@ public class DataService {
     public boolean createTeacher(
             String name, String surname, int age,
             String objectTeaching, int experience
-            )
-    {
+    ) {
         try {
             listTeacher.add(new Teacher(
-               name, surname, age, objectTeaching, experience
+                    name, surname, age, objectTeaching, experience
             ));
             return true;
         } catch (Exception exception) {
@@ -89,5 +89,30 @@ public class DataService {
             }
         }
         return result;
+    }
+
+    public void createStudyGroup(
+            Teacher teacher,
+            ArrayList<Student> students,
+            String faculty,
+            int numberGroup
+    )
+    {
+        listGroups.add(new StudyGroup(teacher, students, faculty, numberGroup));
+    }
+
+    public void removeGroup(StudyGroup group) {
+        listGroups.remove(group);
+    }
+
+    public StudyGroup searchGroup(String faculty, int numberGroup) {
+        for (StudyGroup group : listGroups) {
+            if (group.getFaculty().equals(faculty)
+                && group.getNumberGroup() == numberGroup)
+            {
+                return group;
+            }
+        }
+        return null;
     }
 }

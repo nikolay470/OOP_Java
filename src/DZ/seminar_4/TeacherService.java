@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+// реализованы принципы единственной ответственности,
+// открытости - закрытости, инверсии зависимостей, разделение интерфейсов
 public class TeacherService implements Service<Teacher> {
     @Override
     public void sortList(List<Teacher> list) {

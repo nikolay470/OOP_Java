@@ -32,8 +32,6 @@ public class TeacherController implements Controller<Teacher> {
             );
             int command = input.nextInt();
             input.nextLine();
-//            System.out.println("Введите новое значение");
-//            String value = input.nextLine();
 
             if (command == 1) {
                 System.out.println("Введите новое значение");

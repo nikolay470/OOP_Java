@@ -1,5 +1,8 @@
 package DZ.seminar_4;
 
+
+// сдесь реализован принципы единственной ответственности,
+// принцип открытости для расширения и закрытости для модификации
 public abstract class Person {
     private String name;
     private String surname;
@@ -35,4 +38,9 @@ public abstract class Person {
     public void setAge(Integer age) {
         this.age = age;
     }
+
+    public abstract String getInfo();
+
+    @Override
+    public abstract String toString();
 }

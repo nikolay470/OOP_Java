@@ -1,5 +1,7 @@
 package DZ.seminar_4;
 
+// реализованы принципы единственной ответственности,
+// подстановки барбары лисков, разделение интерфейсов
 public class Teacher extends Person implements Comparable<Teacher>{
     private Integer experience;
     private Integer category;
@@ -52,6 +54,13 @@ public class Teacher extends Person implements Comparable<Teacher>{
         return this.getSurname().charAt(0) - teacher.getSurname().charAt(0);
     }
 
+    public String toString() {
+        return String.format(
+                "%s %s",
+                this.getSurname(), this.getName()
+        );
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Teacher) {
@@ -67,13 +76,6 @@ public class Teacher extends Person implements Comparable<Teacher>{
         } else {
             return false;
         }
-    }
-    @Override
-    public String toString() {
-        return String.format(
-                "%s %s",
-                this.getSurname(), this.getName()
-        );
     }
 
     @Override

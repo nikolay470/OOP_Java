@@ -7,19 +7,17 @@ import java.util.List;
 
 // реализованы принципы единственной ответственности,
 // разделения интерфейсов, инверсия зависимостей, открытости закрытости
-public class Printer implements IPrinterPerson {
+public class PrinterPerson implements IPrinterPerson {
 
     @Override
-    public String print(Person person) {
-        return person.getInfo();
+    public void print(Person person) {
+        System.out.println(person.getInfo());
     }
 
     @Override
-    public String printList(List<? extends Person> list) {
-        StringBuilder result = new StringBuilder();
+    public void printList(List<? extends Person> list) {
         for (Person person : list) {
-            result.append(person.toString() + ",\n");
+            System.out.println(person.toString() + ",\n");
         }
-        return result.toString();
     }
 }

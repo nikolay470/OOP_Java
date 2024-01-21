@@ -4,6 +4,6 @@ import DZ.seminar_4.Person;
 import java.util.List;
 
 public interface IPrinterPerson {
-    String print(Person person);
-    String printList(List<? extends Person> list);
+    void print(Person person);
+    void printList(List<? extends Person> list);
 }

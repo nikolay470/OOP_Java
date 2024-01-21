@@ -1,5 +1,5 @@
-package DZ.seminar_4;
-import DZ.seminar_4.interfaces.IControllerTeacher;
+package DZ.seminar_6;
+import DZ.seminar_6.interfaces.IControllerTeacher;
 
 import java.util.List;
 

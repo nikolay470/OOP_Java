@@ -1,4 +1,4 @@
-package DZ.seminar_4.interfaces;
+package DZ.seminar_6.interfaces;
 
 import java.util.Comparator;
 import java.util.List;

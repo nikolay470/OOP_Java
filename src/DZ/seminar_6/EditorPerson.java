@@ -1,6 +1,6 @@
-package DZ.seminar_4;
+package DZ.seminar_6;
 
-import DZ.seminar_4.interfaces.IEditorPerson;
+import DZ.seminar_6.interfaces.IEditorPerson;
 
 
 // реализованы принципы единственной ответственности,

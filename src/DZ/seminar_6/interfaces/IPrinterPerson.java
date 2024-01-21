@@ -1,6 +1,6 @@
-package DZ.seminar_4.interfaces;
+package DZ.seminar_6.interfaces;
 
-import DZ.seminar_4.Person;
+import DZ.seminar_6.Person;
 import java.util.List;
 
 public interface IPrinterPerson {

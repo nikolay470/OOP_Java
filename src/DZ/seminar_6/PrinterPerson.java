@@ -1,6 +1,6 @@
-package DZ.seminar_4;
+package DZ.seminar_6;
 
-import DZ.seminar_4.interfaces.IPrinterPerson;
+import DZ.seminar_6.interfaces.IPrinterPerson;
 
 import java.util.List;
 

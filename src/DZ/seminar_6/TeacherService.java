@@ -1,6 +1,6 @@
-package DZ.seminar_4;
+package DZ.seminar_6;
 
-import DZ.seminar_4.interfaces.Service;
+import DZ.seminar_6.interfaces.Service;
 
 import java.util.Collections;
 import java.util.Comparator;

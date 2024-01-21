@@ -1,6 +1,5 @@
-package DZ.seminar_4;
+package DZ.seminar_6;
 
-import java.lang.annotation.Target;
 import java.util.Comparator;
 
 // реализованы принципы единственной ответственности,

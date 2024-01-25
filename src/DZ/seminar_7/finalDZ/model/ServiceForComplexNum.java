@@ -24,13 +24,10 @@ public class ServiceForComplexNum implements IServiceForComplexNum {
     public ComplexNumber division(ComplexNumber first, ComplexNumber second) {
         float denominator = second.getValidNumber() * second.getValidNumber()
                 + second.getImaginaryNumber() * second.getImaginaryNumber();
-        System.out.println(denominator);
         validNumber = (first.getValidNumber() * second.getValidNumber() +
                 first.getImaginaryNumber() * second.getImaginaryNumber()) / denominator;
         imaginaryNumber = (first.getImaginaryNumber() * second.getValidNumber() +
                 first.getValidNumber() * (second.getImaginaryNumber() * -1)) / denominator;
-
-        System.out.println((first.getValidNumber() * second.getImaginaryNumber()));
         return createComplexNum(validNumber, imaginaryNumber);
     }
 

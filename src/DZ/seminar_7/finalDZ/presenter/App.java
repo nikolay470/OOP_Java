@@ -1,23 +1,29 @@
 package DZ.seminar_7.finalDZ.presenter;
 
+import DZ.seminar_7.finalDZ.Logger;
 import DZ.seminar_7.finalDZ.model.ComplexNumber;
 import DZ.seminar_7.finalDZ.presenter.interfaces.IApp;
 import DZ.seminar_7.finalDZ.view.View;
 import DZ.seminar_7.finalDZ.model.Model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App implements IApp {
     private Model model = Model.getModel();
     private View view = View.getView();
-    private int firstNum = 0;
-    private int secondNum = 2;
-    private int operator = 1;
+    private final Logger logger = new Logger("src/DZ/seminar_7/finalDZ/log.txt");
+    private final int firstNum = 0;
+    private final int secondNum = 2;
+    private final int operator = 1;
     private ComplexNumber result;
     ArrayList<String> data = new ArrayList<>();
     private Scanner in = new Scanner(System.in);
     private boolean iteration = true;
+
+    public App() throws IOException {
+    }
 
     @Override
     public void start() {
@@ -28,6 +34,7 @@ public class App implements IApp {
                 iteration = false;
             } else {
                 data = view.getData.inputData();
+                logger.writeInputData(data);
                 model.getFirstNumber().initializationComplexNumber(data.get(firstNum));
                 model.getSecondNumber().initializationComplexNumber(data.get(secondNum));
 
@@ -46,6 +53,7 @@ public class App implements IApp {
                             model.getFirstNumber(), model.getSecondNumber()
                     );
                 }
+                logger.writeLog(result);
                 view.printer.printResult(result);
             }
         }

@@ -12,31 +12,38 @@ public class ServiceForComplexNum implements IServiceForComplexNum {
         imaginaryNumber = first.getImaginaryNumber() + second.getImaginaryNumber();
         return createComplexNum(validNumber, imaginaryNumber);
     }
+
     @Override
     public ComplexNumber subtraction(ComplexNumber first, ComplexNumber second) {
         validNumber = first.getValidNumber() - second.getValidNumber();
         imaginaryNumber = first.getImaginaryNumber() - second.getImaginaryNumber();
         return createComplexNum(validNumber, imaginaryNumber);
     }
+
     @Override
     public ComplexNumber division(ComplexNumber first, ComplexNumber second) {
         float denominator = second.getValidNumber() * second.getValidNumber()
                 + second.getImaginaryNumber() * second.getImaginaryNumber();
+        System.out.println(denominator);
         validNumber = (first.getValidNumber() * second.getValidNumber() +
-                first.getImaginaryNumber() * second.getValidNumber()) / denominator;
-        imaginaryNumber = (first.getValidNumber() * (second.getImaginaryNumber() * -1) +
-                first.getImaginaryNumber() * (second.getImaginaryNumber() * -1)) / denominator;
+                first.getImaginaryNumber() * second.getImaginaryNumber()) / denominator;
+        imaginaryNumber = (first.getImaginaryNumber() * second.getValidNumber() +
+                first.getValidNumber() * (second.getImaginaryNumber() * -1)) / denominator;
+
+        System.out.println((first.getValidNumber() * second.getImaginaryNumber()));
         return createComplexNum(validNumber, imaginaryNumber);
     }
+
     @Override
     public ComplexNumber multipliucation(ComplexNumber first, ComplexNumber second) {
-        validNumber = (first.getValidNumber() * second.getValidNumber()) +
-                (first.getImaginaryNumber() * second.getImaginaryNumber() * (-1));
+        validNumber = (first.getValidNumber() * second.getValidNumber()) -
+                (first.getImaginaryNumber() * second.getImaginaryNumber());
         imaginaryNumber = (first.getImaginaryNumber() * second.getValidNumber()) +
                 (first.getValidNumber() * second.getImaginaryNumber());
         return createComplexNum(validNumber, imaginaryNumber);
 
     }
+
     private ComplexNumber createComplexNum(float first, float second) {
         return new ComplexNumber(first, second);
     }

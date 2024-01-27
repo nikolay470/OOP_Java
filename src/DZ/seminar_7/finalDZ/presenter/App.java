@@ -32,7 +32,7 @@ public class App implements IApp {
             String cmd = in.nextLine();
             if (cmd.equalsIgnoreCase("N")) {
                 iteration = false;
-            } else {
+            } else if (cmd.equalsIgnoreCase("Y")) {
                 data = view.getData.inputData();
                 logger.writeInputData(data);
                 model.getFirstNumber().initializationComplexNumber(data.get(firstNum));
@@ -55,6 +55,9 @@ public class App implements IApp {
                 }
                 logger.writeLog(result);
                 view.printer.printResult(result);
+            } else {
+                System.out.println("Вы ввели некоректный ответ.");
+                System.out.println("Введите букву \"y\"(да) или \"n\"(нет).\n");
             }
         }
     }

@@ -63,11 +63,11 @@ public class ComplexNumber {
     @Override
     public String toString() {
         if (validNumber == 0 && imaginaryNumber != 0) {
-            return String.format("z = %.2f" , imaginaryNumber);
+            return String.format("z = %.2fi" , imaginaryNumber);
         } else if (imaginaryNumber == 0 && validNumber != 0) {
-            return String.format("z = %.2f", validNumber);
+            return String.format("z = %.2fi", validNumber);
         } else if (operator.equals("-")) {
-            return String.format("z = %.2f %s %.2f", validNumber, operator, imaginaryNumber * -1);
+            return String.format("z = %.2f %s %.2fi", validNumber, operator, imaginaryNumber * -1);
         } else if (validNumber == 0 && imaginaryNumber == 0) {
             return String.format("z = %.2f + %.2fi", validNumber, imaginaryNumber);
         } else {

@@ -1,6 +1,7 @@
-package DZ.seminar_7.finalDZ;
+package DZ.seminar_7.finalDZ.model;
 
 import DZ.seminar_7.finalDZ.model.ComplexNumber;
+import DZ.seminar_7.finalDZ.model.interfaces.ILogger;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Logger implements ILogger{
+public class Logger implements ILogger {
     private FileWriter writer;
     private String inputData;
     private Date localTime;

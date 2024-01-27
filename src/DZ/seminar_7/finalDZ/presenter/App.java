@@ -1,6 +1,6 @@
 package DZ.seminar_7.finalDZ.presenter;
 
-import DZ.seminar_7.finalDZ.Logger;
+import DZ.seminar_7.finalDZ.model.Logger;
 import DZ.seminar_7.finalDZ.model.ComplexNumber;
 import DZ.seminar_7.finalDZ.presenter.interfaces.IApp;
 import DZ.seminar_7.finalDZ.view.View;

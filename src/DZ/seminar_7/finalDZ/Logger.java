@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Logger {
+public class Logger implements ILogger{
     private FileWriter writer;
     private String inputData;
     private Date localTime;
@@ -20,12 +20,6 @@ public class Logger {
     public void writeLog(ComplexNumber result) {
         localTime = new Date();
         String time = new SimpleDateFormat("dd-MM-yyyy  HH:mm:ss").format(localTime);
-//        String time = String.format(
-//                "%d-%d-%d   %d:%d:%d",
-//                localTime.getDayOfMonth(), localTime.getMonthValue(),
-//                localTime.getYear(), localTime.getHour(), localTime.getMinute(),
-//                localTime.getSecond()
-//        );
         try {
             this.writer.write(
                     time + "\nВходные данные: " + inputData + "\n" +

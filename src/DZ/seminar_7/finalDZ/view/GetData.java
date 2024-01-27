@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class GetData {
     private Scanner in = new Scanner(System.in);
-    private String input;
     private String messageFromFirstNumber =
             "Введите первое комплексное число в формате 'a + bi'";
     private String messageFromSecondNumber =
@@ -20,12 +19,39 @@ public class GetData {
     }
     public String inputNumber(String message) {
         System.out.println(message);
-        input = in.nextLine();
+        String input = in.nextLine();
         return input;
     }
     public String inputOperator() {
-        System.out.println("Введите действие");
-        input = in.nextLine();
-        return input;
+        boolean iteration = true;
+        int cmd = 0;
+        while (iteration) {
+            System.out.println("Введите действие: ");
+            System.out.println(
+                    "1. Сложить\n2. Вычесть\n"
+                            + "3. Умножить\n4. Разделить"
+            );
+            try {
+                cmd = Integer.parseInt(in.nextLine());
+                if (cmd < 1 || cmd > 4) {
+                    throw new RuntimeException();
+                }
+                iteration = false;
+            } catch (RuntimeException e) {
+                System.out.println("Вы ввели некоректный номер действия.");
+                System.out.println("Пожалуйста введите число от 1 до 4.\n");
+            }
+        }
+        if (cmd == 1) {
+            return "+";
+        }
+        if (cmd == 2) {
+            return "-";
+        }
+        if(cmd == 3) {
+            return "*";
+        } else {
+            return "/";
+        }
     }
 }

@@ -5,8 +5,8 @@ import java.util.Scanner;;
 
 public class View {
     private static View view;
-    public GetData getData;
-    public Printer printer;
+    private GetData getData;
+    private Printer printer;
 
     private View() {
         getData = new GetData();
@@ -18,5 +18,13 @@ public class View {
             view = new View();
             return view;
         } return view;
+    }
+
+    public GetData getData() {
+        return getData;
+    }
+
+    public Printer printer() {
+        return printer;
     }
 }

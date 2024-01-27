@@ -33,11 +33,19 @@ public class App implements IApp {
             if (cmd.equalsIgnoreCase("N")) {
                 iteration = false;
             } else if (cmd.equalsIgnoreCase("Y")) {
-                data = view.getData.inputData();
-                logger.writeInputData(data);
-                model.getFirstNumber().initializationComplexNumber(data.get(firstNum));
-                model.getSecondNumber().initializationComplexNumber(data.get(secondNum));
+                while (iteration) {
+                    data = view.getData().inputData();
+                    logger.writeInputData(data);
+                    boolean isInitFirst = model.getFirstNumber().initializationComplexNumber(data.get(firstNum));
+                    boolean isInitSecond = model.getSecondNumber().initializationComplexNumber(data.get(secondNum));
+                    if (isInitFirst && isInitSecond) {
+                        iteration = false;
+                    } else {
+                        view.printer().printInputError();
+                    }
+                }
 
+                iteration = true;
                 if (data.get(operator).equals("+")) {
                     result = model.service.sum(model.getFirstNumber(), model.getSecondNumber());
                 } else if (data.get(operator).equals("-")) {
@@ -54,7 +62,7 @@ public class App implements IApp {
                     );
                 }
                 logger.writeLog(result);
-                view.printer.printResult(result);
+                view.printer().printResult(result);
             } else {
                 System.out.println("Вы ввели некоректный ответ.");
                 System.out.println("Введите букву \"y\"(да) или \"n\"(нет).\n");
